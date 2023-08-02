@@ -20,6 +20,8 @@ jobs:
         run: |
           npm install
           npm run build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider # add this line
       - uses: actions/upload-artifact@master
         with: 
           name: webpack artifacts

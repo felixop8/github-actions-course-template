@@ -9,15 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
-
     steps:
       - uses: actions/checkout@v2
       
       - name: npm install and build webpack
         run: |
+          npm upgrade
           npm install
           npm run build
           
